@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>R10A 1994 – editierbares Dashboard</title>
+<script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=uCi1qv-sh9XyzXtv6SLrhnA1Hv1ALpbtdH_xgVMO6PK4ThxA7jJK0bC3C6fPoJZ9kENe-Ibzp6XOoNyjSYl_pZw5q1fU4iLxfUykZE-5ggzEYMsLsoPil_Dj_wK0s9KO_rvqaNBm84d6CR-i_qzGjixWxllhzbnrD3GFgZ8S-NqaJK8f0b9P2R-lzdcDxct2g6Pac5pcOvu2lGDewenikEpjcTkbofTkwYl3rb6_I66b2HOILb58ZkamSAE_k3_sRXwdkE1OJPC9_yD_SXxgLkFbQWwvuFH6zCmVCTKy84VpI_3bNkzXL7dEkaoJ9owx" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://ff.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9jaGF0Z3B0LmNvbS9iYWNrZW5kLWFwaS9lc3R1YXJ5L2NvbnRlbnQ_aWQ9ZmlsZV8wMDAwMDAwMDdhODg3MjBhOTAwNDI2MjY2ZjJlOTQ0MCZmbj1pbmRleF9mdWVyX2dpdGh1Yi5odG1sJmNkPWF0dGFjaG1lbnQmdHM9NDk1NTQ2JnA9ZnMmY2lkPTEmc2lnPTY4NTYyMDM1YTM5NmQzYmRhYThkZWE2MjQ3ZjdkODUxMjQyZDhhNGQ2OTI3M2ViYmY2YTRjNTdhYmYwN2UzYzYmdj0w"/><style>
+:root{--bg:#07111f;--panel:#0f1b2d;--line:#2a405d;--text:#f8fbff;--muted:#aab8ca;--cyan:#58d5ff}
+*{box-sizing:border-box} body{margin:0;background:linear-gradient(180deg,#091527,#07111f);color:var(--text);font-family:Arial,sans-serif}
+header,main,footer{max-width:1450px;margin:auto;padding-left:24px;padding-right:24px}
+header{padding-top:40px;padding-bottom:20px} h1{font-size:clamp(2.2rem,6vw,5rem);margin:.2rem 0} header p,footer{color:var(--muted)}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0} button,.file-label,input,select,textarea{font:inherit}
+.toolbar button,.file-label{border:1px solid var(--line);background:#12243a;color:#fff;border-radius:12px;padding:10px 13px;cursor:pointer;font-weight:700}
+.file-label input{display:none} .controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+.controls input,.controls select{background:#0d1b2d;border:1px solid var(--line);color:#fff;border-radius:12px;padding:12px}
+.controls input{flex:1;min-width:250px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:18px;padding-bottom:50px}
+.card{position:relative;background:linear-gradient(180deg,var(--panel),#0b1625);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 14px 38px #0005;cursor:pointer}
+.card:hover{transform:translateY(-3px);transition:.2s}
+.pencil{position:absolute;right:12px;top:12px;z-index:5;width:38px;height:38px;border-radius:50%;border:1px solid #ffffff38;background:#07111fe8;color:#fff;cursor:pointer;font-size:1.15rem}
+.photos{display:grid;grid-template-columns:1fr 26px 1fr;align-items:center;gap:8px;padding:14px;background:#07111f}
+.photo{position:relative;aspect-ratio:1;border-radius:16px;overflow:hidden;background:#1a2a40}
+.photo img,.empty{width:100%;height:100%;object-fit:cover} .photo span{position:absolute;left:7px;bottom:7px;background:#000b;border-radius:999px;padding:4px 7px;font-size:.72rem}
+.empty{display:grid;place-content:center;text-align:center;color:var(--muted)} .arrow{text-align:center;color:var(--cyan);font-weight:bold}
+.content{padding:17px} .top{display:flex;justify-content:space-between;align-items:center} .top b{color:var(--cyan)} .badge{font-size:.72rem;border:1px solid;border-radius:999px;padding:5px 8px}
+.card h3{margin:.7rem 0 .3rem} .info{color:var(--muted);min-height:2.7em} .chips{display:flex;gap:7px;flex-wrap:wrap}
+.chips span{font-size:.76rem;background:#172b46;border:1px solid #31506f;border-radius:999px;padding:6px 9px}
+.hidden{display:none!important}
+dialog{width:min(760px,94vw);border:1px solid #355373;border-radius:24px;background:#0b1727;color:#fff;padding:0;box-shadow:0 35px 100px #000b}
+dialog::backdrop{background:#02060ddd} .close{position:absolute;right:12px;top:10px;width:38px;height:38px;border-radius:50%;border:0;background:#ffffff18;color:#fff;cursor:pointer}
+form{display:grid;gap:13px;padding:24px} form h2{margin:0;padding-right:45px} label{display:grid;gap:6px;color:#d5e4f5;font-weight:700}
+form input,form select,form textarea{width:100%;background:#0d1c30;border:1px solid #355373;color:#fff;border-radius:11px;padding:11px} textarea{min-height:80px;resize:vertical}
+.preview-row{display:flex;align-items:center;gap:15px;flex-wrap:wrap} .preview-row img,.preview{width:125px;height:125px;object-fit:cover;border-radius:15px;background:#182a42}
+.preview{display:grid;place-content:center;color:var(--muted);text-align:center} .actions{display:flex;justify-content:flex-end;gap:9px;flex-wrap:wrap}
+.actions button{border:1px solid #355373;border-radius:11px;padding:10px 14px;color:#fff;cursor:pointer;font-weight:700} .save{background:#176b47} .cancel{background:#26364d} .remove{background:#6e2934}
+.notice{background:#10243c;border:1px solid #315273;border-radius:12px;padding:11px;color:#cfe0f3;font-size:.9rem}
+footer{padding-bottom:35px}
+@media(max-width:600px){.controls{flex-direction:column}.controls input{min-width:0}}
+</style>
+</head>
+<body>
+<header>
+<div style="color:var(--cyan);font-weight:bold;letter-spacing:.14em">R10A · 1994</div>
+<h1>Editierbares Klassen-Dashboard</h1>
+<p>Auf den kleinen Stift oben rechts klicken. Die Änderungen werden sofort sichtbar und nach Möglichkeit lokal im Browser gespeichert.</p>
+<div class="toolbar">
+<button id="exportBtn" type="button">Daten exportieren</button>
+<label class="file-label">Daten importieren<input id="importFile" type="file" accept=".json,application/json"></label>
+<button id="resetBtn" type="button">Ausgangsstand wiederherstellen</button>
+</div>
+<div class="controls">
+<input id="search" type="search" placeholder="Name, Ort, Beruf oder Hinweis suchen">
+<select id="filter"><option value="">Alle Status</option><option>Bestätigt</option><option>Wahrscheinlich</option><option>Hinweis</option><option>Organisator</option><option>Offen</option></select>
+</div>
+</header>
+<main><div id="loadMessage" class="notice" style="margin-bottom:18px">Daten werden geladen …</div><div id="grid" class="grid"></div></main>
+<footer>Online-Version über GitHub Pages. Änderungen im Browser bleiben zunächst nur auf diesem Gerät gespeichert. Zum dauerhaften Aktualisieren die JSON-Datei exportieren und im Repository ersetzen.</footer>
+
+<dialog id="editor">
+<button class="close" id="closeEditor" type="button">×</button>
+<form id="editForm">
+<h2>Person bearbeiten</h2>
+<div class="notice">Du kannst Textfelder ändern und ein aktuelles Foto auswählen. Mit „Speichern“ wird die Karte aktualisiert.</div>
+<input id="nr" type="hidden">
+<label>Name<input id="name" required></label>
+<label>Status<select id="status"><option>Bestätigt</option><option>Wahrscheinlich</option><option>Hinweis</option><option>Organisator</option><option>Offen</option></select></label>
+<label>Bereich / Rolle<input id="role"></label>
+<label>Aktuelle Informationen<textarea id="today"></textarea></label>
+<label>Ort / Region<input id="location"></label>
+<label>Verbindungen / weitere Hinweise<textarea id="network"></textarea></label>
+<label>Aktuelles Bild<input id="imageFile" type="file" accept="image/*"></label>
+<div class="preview-row"><div id="preview" class="preview">Kein aktuelles Bild</div><button id="removeImage" class="remove" type="button">Bild entfernen</button></div>
+<div class="actions"><button class="cancel" id="cancelEdit" type="button">Abbrechen</button><button class="save" type="submit">Speichern</button></div>
+</form>
+</dialog>
+
+<script>
+const DATA_FILE = "R10A_Dashboard_Daten.json";
+let DEFAULT_DATA = [];
+const STORAGE_KEY = "r10a_editable_dashboard_v3";
+
+async function init(){
+  const message=document.getElementById("loadMessage");
+  try{
+    const r=await fetch("./"+DATA_FILE+"?v="+Date.now(),{cache:"no-store"});
+    if(!r.ok) throw new Error("HTTP "+r.status);
+    const loaded=await r.json();
+    if(!Array.isArray(loaded)) throw new Error("JSON ist keine Personenliste");
+    DEFAULT_DATA=loaded;
+
+    const saved=localStorage.getItem(STORAGE_KEY);
+    if(saved){
+      try{
+        const parsed=JSON.parse(saved);
+        data=Array.isArray(parsed) && parsed.length>=DEFAULT_DATA.length
+          ? parsed
+          : JSON.parse(JSON.stringify(DEFAULT_DATA));
+      }catch{
+        data=JSON.parse(JSON.stringify(DEFAULT_DATA));
+      }
+    }else{
+      data=JSON.parse(JSON.stringify(DEFAULT_DATA));
+    }
+
+    message.style.display="none";
+    render();
+  }catch(e){
+    console.error("Fehler beim Laden der JSON-Datei:",e);
+    message.innerHTML="<strong>Daten konnten nicht geladen werden.</strong><br>Prüfe, ob <code>"+DATA_FILE+"</code> direkt neben <code>index.html</code> liegt und exakt so geschrieben ist.<br><small>"+e.message+"</small>";
+    data=[];
+    render();
+  }
+}
+
+let data = [];
+let pendingImage = "";
+const grid = document.getElementById("grid");
+const editor = document.getElementById("editor");
+
+function loadStoredData(){
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    return saved ? JSON.parse(saved) : structuredClone(DEFAULT_DATA);
+  } catch(e) {
+    return JSON.parse(JSON.stringify(DEFAULT_DATA));
+  }
+}
+function saveStoredData(){
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch(e) {}
+}
+function esc(v){
+  return String(v ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c]);
+}
+function statusClass(s){
+  return s==="Bestätigt"?"#62df99":s==="Organisator"?"#ffd27c":s==="Wahrscheinlich"?"#ffe08d":s==="Hinweis"?"#75caff":"#c7d0db";
+}
+function render(){
+  const term=document.getElementById("search").value.trim().toLowerCase();
+  const filter=document.getElementById("filter").value;
+  grid.innerHTML="";
+  data.forEach(p=>{
+    const hay=(p.name+" "+p.today+" "+p.location+" "+p.role+" "+p.network).toLowerCase();
+    if(term && !hay.includes(term)) return;
+    if(filter && p.status!==filter) return;
+    const card=document.createElement("article");
+    card.className="card";
+    card.innerHTML=`
+      <button class="pencil" type="button" title="Bearbeiten" aria-label="${esc(p.name)} bearbeiten">✎</button>
+      <div class="photos">
+        <div class="photo"><img src="${esc(p.oldImg)}" alt="${esc(p.name)} 1994"><span>1994</span></div>
+        <div class="arrow">↔</div>
+        <div class="photo">${p.currentImg?`<img src="${esc(p.currentImg)}" alt="Aktuelles Foto">`:`<div class="empty">Heute<br><small>kein Bild</small></div>`}<span>Heute</span></div>
+      </div>
+      <div class="content">
+        <div class="top"><b>#${String(p.nr).padStart(2,"0")}</b><span class="badge" style="color:${statusClass(p.status)}">${esc(p.status)}</span></div>
+        <h3>${esc(p.name)}</h3><div class="info">${esc(p.today)}</div>
+        <div class="chips">${p.role?`<span>${esc(p.role)}</span>`:""}${p.location?`<span>${esc(p.location)}</span>`:""}</div>
+      </div>`;
+    card.querySelector(".pencil").addEventListener("click", e=>{e.stopPropagation();openEditor(p.nr);});
+    card.addEventListener("click", ()=>openEditor(p.nr));
+    grid.appendChild(card);
+  });
+}
+function openEditor(nr){
+  const p=data.find(x=>x.nr===nr); if(!p) return;
+  document.getElementById("nr").value=p.nr;
+  document.getElementById("name").value=p.name||"";
+  document.getElementById("status").value=p.status||"Offen";
+  document.getElementById("role").value=p.role||"";
+  document.getElementById("today").value=p.today||"";
+  document.getElementById("location").value=p.location||"";
+  document.getElementById("network").value=p.network||"";
+  document.getElementById("imageFile").value="";
+  pendingImage=p.currentImg||"";
+  showPreview();
+  editor.showModal();
+}
+function showPreview(){
+  const el=document.getElementById("preview");
+  if(pendingImage) el.outerHTML=`<img id="preview" src="${pendingImage}" alt="Vorschau">`;
+  else el.outerHTML='<div id="preview" class="preview">Kein aktuelles Bild</div>';
+}
+document.getElementById("imageFile").addEventListener("change",e=>{
+  const file=e.target.files[0]; if(!file) return;
+  const reader=new FileReader();
+  reader.onload=()=>{pendingImage=reader.result;showPreview();};
+  reader.readAsDataURL(file);
+});
+document.getElementById("removeImage").addEventListener("click",()=>{pendingImage="";showPreview();});
+document.getElementById("editForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  const nr=Number(document.getElementById("nr").value);
+  const p=data.find(x=>x.nr===nr); if(!p) return;
+  p.name=document.getElementById("name").value.trim();
+  p.status=document.getElementById("status").value;
+  p.role=document.getElementById("role").value.trim();
+  p.today=document.getElementById("today").value.trim();
+  p.location=document.getElementById("location").value.trim();
+  p.network=document.getElementById("network").value.trim();
+  p.currentImg=pendingImage;
+  saveStoredData(); render(); editor.close();
+});
+document.getElementById("closeEditor").addEventListener("click",()=>editor.close());
+document.getElementById("cancelEdit").addEventListener("click",()=>editor.close());
+document.getElementById("search").addEventListener("input",render);
+document.getElementById("filter").addEventListener("change",render);
+document.getElementById("exportBtn").addEventListener("click",()=>{
+  const blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json"});
+  const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download="R10A_Dashboard_Daten.json"; a.click();
+  setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+});
+document.getElementById("importFile").addEventListener("change",e=>{
+  const file=e.target.files[0]; if(!file) return;
+  const reader=new FileReader();
+  reader.onload=()=>{try{const imported=JSON.parse(reader.result);if(!Array.isArray(imported))throw new Error();data=imported;saveStoredData();render();alert("Daten wurden importiert.");}catch(err){alert("Die Datei ist keine gültige Dashboard-Sicherung.");}};
+  reader.readAsText(file);
+});
+document.getElementById("resetBtn").addEventListener("click",()=>{
+  if(confirm("Alle Änderungen und hochgeladenen Bilder auf diesem Gerät löschen?")){data=JSON.parse(JSON.stringify(DEFAULT_DATA));saveStoredData();render();}
+});
+init();
+</script>
+</body>
+</html>
