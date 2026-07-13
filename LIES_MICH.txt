@@ -1,0 +1,17 @@
+R10A Dashboard – editierbare Offline-Version v3
+
+1. ZIP vollständig entpacken.
+2. index.html mit Edge, Chrome oder Firefox öffnen.
+3. Auf den kleinen Stift oben rechts einer Karte klicken.
+4. Daten ändern oder ein aktuelles Bild auswählen.
+5. „Speichern“ anklicken.
+
+Die Änderungen werden direkt auf der Seite sichtbar.
+Sie werden außerdem – soweit der Browser dies bei lokalen Dateien erlaubt – lokal gespeichert.
+
+Für die Weitergabe:
+- Im Dashboard „Daten exportieren“ anklicken.
+- Die erzeugte JSON-Datei zusammen mit der ZIP-Datei versenden.
+- Der Empfänger öffnet das Dashboard und klickt „Daten importieren“.
+
+Der Ordner assets muss bei index.html bleiben.
