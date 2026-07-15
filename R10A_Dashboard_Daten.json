@@ -187,15 +187,15 @@
     "currentImg": "assets/images/image_023.jpg"
   },
   {
-    "nr": 18,
-    "name": "Kai Schuster",
-    "status": "Hinweis",
-    "role": "Fußball",
-    "today": "Hat laut Erinnerung eine Fußballkarriere gemacht",
-    "location": "Rhein-Main",
-    "network": "",
-    "oldImg": "assets/images/image_024.jpg",
-    "currentImg": ""
+  "nr": 18,
+  "name": "Kai Schuster",
+  "status": "Bestätigt",
+  "role": "Facebook · Fußball",
+  "today": "Über Facebook-Profil gefunden.",
+  "location": "",
+  "network": "Facebook: https://www.facebook.com/kai.schuster2 | Laut Erinnerung Fußballkarriere.",
+  "oldImg": "assets/images/image_024.jpg",
+  "currentImg": "assets/images/image_035.jpg"
   },
   {
     "nr": 19,
