@@ -154,15 +154,17 @@
     "currentImg": ""
   },
   {
-    "nr": 15,
-    "name": "Astrit Koch",
-    "status": "Offen",
-    "role": "",
-    "today": "Schreibweise noch zu prüfen",
-    "location": "",
-    "network": "",
-    "oldImg": "assets/images/image_019.jpg",
-    "currentImg": ""
+{
+  "nr": 15,
+  "name": "Astrid Koch",
+  "status": "Bestätigt",
+  "role": "Facebook",
+  "today": "Über Facebook-Profil gefunden.",
+  "location": "",
+  "network": "Facebook-Profil vorhanden: https://www.facebook.com/astrid.koch.3538",
+  "oldImg": "assets/images/image_019.jpg",
+  "currentImg": "assets/images/image_19a.jpg"
+}
   },
   {
     "nr": 16,
