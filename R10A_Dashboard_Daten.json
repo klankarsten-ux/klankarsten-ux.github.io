@@ -63,7 +63,7 @@
     "location": "Dreieich",
     "network": "",
     "oldImg": "assets/images/image_008.jpg",
-    "currentImg": ""
+    "currentImg": "assets/images/image_043.jpg"
   },
   {
     "nr": 7,
@@ -112,7 +112,7 @@
   {
     "nr": 11,
     "name": "Maria Federico",
-    "status": "Hinweis",
+    "status": "Bestätigt",
     "role": "",
     "today": "",
     "location": "Langen",
@@ -277,7 +277,7 @@
   {
     "nr": 26,
     "name": "Senayit Torres",
-    "status": "Hinweis",
+    "status": "Bestätigt",
     "role": "Nicht auf dem Klassenfoto",
     "today": "Ist laut Ferhat später in die USA gegangen.",
     "location": "USA",
