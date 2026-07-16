@@ -4,7 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>R10A 1994 – editierbares Dashboard</title>
-<script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=uCi1qv-sh9XyzXtv6SLrhnA1Hv1ALpbtdH_xgVMO6PK4ThxA7jJK0bC3C6fPoJZ9kENe-Ibzp6XOoNyjSYl_pZw5q1fU4iLxfUykZE-5ggzEYMsLsoPil_Dj_wK0s9KO_rvqaNBm84d6CR-i_qzGjixWxllhzbnrD3GFgZ8S-NqaJK8f0b9P2R-lzdcDxct2g6Pac5pcOvu2lGDewenikEpjcTkbofTkwYl3rb6_I66b2HOILb58ZkamSAE_k3_sRXwdkE1OJPC9_yD_SXxgLkFbQWwvuFH6zCmVCTKy84VpI_3bNkzXL7dEkaoJ9owx" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://ff.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9jaGF0Z3B0LmNvbS9iYWNrZW5kLWFwaS9lc3R1YXJ5L2NvbnRlbnQ_aWQ9ZmlsZV8wMDAwMDAwMDdhODg3MjBhOTAwNDI2MjY2ZjJlOTQ0MCZmbj1pbmRleF9mdWVyX2dpdGh1Yi5odG1sJmNkPWF0dGFjaG1lbnQmdHM9NDk1NTQ2JnA9ZnMmY2lkPTEmc2lnPTY4NTYyMDM1YTM5NmQzYmRhYThkZWE2MjQ3ZjdkODUxMjQyZDhhNGQ2OTI3M2ViYmY2YTRjNTdhYmYwN2UzYzYmdj0w"/><style>
+<style>
+
+
 :root{--bg:#07111f;--panel:#0f1b2d;--line:#2a405d;--text:#f8fbff;--muted:#aab8ca;--cyan:#58d5ff}
 *{box-sizing:border-box} body{margin:0;background:linear-gradient(180deg,#091527,#07111f);color:var(--text);font-family:Arial,sans-serif}
 header,main,footer{max-width:1450px;margin:auto;padding-left:24px;padding-right:24px}
@@ -54,13 +56,13 @@ footer{padding-bottom:35px}
 </div>
 </header>
 <main><div id="loadMessage" class="notice" style="margin-bottom:18px">Daten werden geladen …</div><div id="grid" class="grid"></div></main>
-<footer>Online-Version über GitHub Pages. Änderungen im Browser bleiben zunächst nur auf diesem Gerät gespeichert. Zum dauerhaften Aktualisieren die JSON-Datei exportieren und im Repository ersetzen.</footer>
+<footer>Online-Version über GitHub Pages. Änderungen im Browser bleiben zunächst nur auf diesem Gerät gespeichert. Zum dauerhaften Aktualisieren die JSON-Datei exportieren und im Repository ersetzen. Neue Bilder zusätzlich in den angegebenen GitHub-Ordner hochladen.</footer>
 
 <dialog id="editor">
 <button class="close" id="closeEditor" type="button">×</button>
 <form id="editForm">
 <h2>Person bearbeiten</h2>
-<div class="notice">Du kannst Textfelder ändern und ein aktuelles Foto auswählen. Mit „Speichern“ wird die Karte aktualisiert.</div>
+<div class="notice">Du kannst Textfelder ändern und einen Bildpfad eintragen. Der Pfad wird als normaler Text in der JSON gespeichert – nicht als Base64.</div>
 <input id="nr" type="hidden">
 <label>Name<input id="name" required></label>
 <label>Status<select id="status"><option>Bestätigt</option><option>Wahrscheinlich</option><option>Hinweis</option><option>Organisator</option><option>Offen</option></select></label>
@@ -68,7 +70,7 @@ footer{padding-bottom:35px}
 <label>Aktuelle Informationen<textarea id="today"></textarea></label>
 <label>Ort / Region<input id="location"></label>
 <label>Verbindungen / weitere Hinweise<textarea id="network"></textarea></label>
-<label>Aktuelles Bild<input id="imageFile" type="file" accept="image/*"></label>
+<label>Bildpfad oder Bild-URL<input id="imagePath" type="text" placeholder="z. B. assets/images/heute/kai-schuster.jpg"><small style="color:var(--muted);font-weight:400">Das Bild muss separat in dein GitHub-Repository hochgeladen werden. In der JSON wird nur dieser Pfad gespeichert.</small></label>
 <div class="preview-row"><div id="preview" class="preview">Kein aktuelles Bild</div><button id="removeImage" class="remove" type="button">Bild entfernen</button></div>
 <div class="actions"><button class="cancel" id="cancelEdit" type="button">Abbrechen</button><button class="save" type="submit">Speichern</button></div>
 </form>
@@ -170,8 +172,8 @@ function openEditor(nr){
   document.getElementById("today").value=p.today||"";
   document.getElementById("location").value=p.location||"";
   document.getElementById("network").value=p.network||"";
-  document.getElementById("imageFile").value="";
   pendingImage=p.currentImg||"";
+  document.getElementById("imagePath").value=pendingImage;
   showPreview();
   editor.showModal();
 }
@@ -180,13 +182,11 @@ function showPreview(){
   if(pendingImage) el.outerHTML=`<img id="preview" src="${pendingImage}" alt="Vorschau">`;
   else el.outerHTML='<div id="preview" class="preview">Kein aktuelles Bild</div>';
 }
-document.getElementById("imageFile").addEventListener("change",e=>{
-  const file=e.target.files[0]; if(!file) return;
-  const reader=new FileReader();
-  reader.onload=()=>{pendingImage=reader.result;showPreview();};
-  reader.readAsDataURL(file);
+document.getElementById("imagePath").addEventListener("input",e=>{
+  pendingImage=e.target.value.trim();
+  showPreview();
 });
-document.getElementById("removeImage").addEventListener("click",()=>{pendingImage="";showPreview();});
+document.getElementById("removeImage").addEventListener("click",()=>{pendingImage="";document.getElementById("imagePath").value="";showPreview();});
 document.getElementById("editForm").addEventListener("submit",e=>{
   e.preventDefault();
   const nr=Number(document.getElementById("nr").value);
@@ -197,7 +197,7 @@ document.getElementById("editForm").addEventListener("submit",e=>{
   p.today=document.getElementById("today").value.trim();
   p.location=document.getElementById("location").value.trim();
   p.network=document.getElementById("network").value.trim();
-  p.currentImg=pendingImage;
+  p.currentImg=document.getElementById("imagePath").value.trim();
   saveStoredData(); render(); editor.close();
 });
 document.getElementById("closeEditor").addEventListener("click",()=>editor.close());
