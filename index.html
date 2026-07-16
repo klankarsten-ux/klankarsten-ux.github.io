@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>R10A 1994 – editierbares Dashboard</title>
-<style>
+<script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=D7ru5xQRXkfYkZNr11c51VxuSvPcF7-juF4zezI7h1WCo2bJvr8V7AcAxtJyxxMDYIope2Gpnh1ZS7Ng8mWVA4_3EDb4b3NwUiKyDldGgelf9fk-Wn54X9s1mBXIFVhhFH5ZCN8lfVK_E7dwRkfnMvw9JeurW_JX3KTWX71a1ng7i3KRAiokVfUvS1ecEP5OaNPk8_nh-JIwhNw9zAlxYlrHDOP4eLOwSP_zxa4Fcg0gCtZdTeHaXeCNR5pZe1QpAE-sfgMDBbuVYrECc1Cr1TAnD0E2nzx8L7c74NqRpYYSJwbiL3L_Zf4bkwg-WM1c9V0iOgsC1Oj_1W-fNQmKQw" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://ff.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9jaGF0Z3B0LmNvbS9iYWNrZW5kLWFwaS9lc3R1YXJ5L2NvbnRlbnQ_aWQ9ZmlsZV8wMDAwMDAwMDk2YTQ3MjQ2YjUwYmI3NTQ1Y2M1ZWFlNSZmbj1pbmRleF9qc29uX2hhdF92b3JyYW5nLmh0bWwmY2Q9YXR0YWNobWVudCZ0cz00OTU2MTYmcD1mcyZjaWQ9MSZzaWc9NmQwNTc3ZDBmNzVkZDUxOTdmMjgzZGFkYzY1YWNlMzRkYzE2NzM0MjE3ZjZiN2RlNWQzMDRiNGU5NmM3NTBkNyZ2PTA"/><style>
 
 
 :root{--bg:#07111f;--panel:#0f1b2d;--line:#2a405d;--text:#f8fbff;--muted:#aab8ca;--cyan:#58d5ff}
@@ -56,7 +56,7 @@ footer{padding-bottom:35px}
 </div>
 </header>
 <main><div id="loadMessage" class="notice" style="margin-bottom:18px">Daten werden geladen …</div><div id="grid" class="grid"></div></main>
-<footer>Online-Version über GitHub Pages. Änderungen im Browser bleiben zunächst nur auf diesem Gerät gespeichert. Zum dauerhaften Aktualisieren die JSON-Datei exportieren und im Repository ersetzen. Bilder separat hochladen und nur den Pfad speichern.</footer>
+<footer>Online-Version über GitHub Pages. Beim Neuladen werden immer die aktuellen Daten aus der JSON-Datei geladen. Zum dauerhaften Aktualisieren die JSON-Datei exportieren und im Repository ersetzen. Bilder separat hochladen und nur den Pfad speichern.</footer>
 
 <dialog id="editor">
 <button class="close" id="closeEditor" type="button">×</button>
@@ -93,22 +93,10 @@ async function init(){
       currentImg:(typeof p.currentImg==="string" && !p.currentImg.startsWith("data:image/")) ? p.currentImg : ""
     }));
 
-    const saved=localStorage.getItem(STORAGE_KEY);
-    if(saved){
-      try{
-        const parsed=JSON.parse(saved).map(p=>({
-          ...p,
-          currentImg:(typeof p.currentImg==="string" && !p.currentImg.startsWith("data:image/")) ? p.currentImg : ""
-        }));
-        data=Array.isArray(parsed) && parsed.length>=DEFAULT_DATA.length
-          ? parsed
-          : JSON.parse(JSON.stringify(DEFAULT_DATA));
-      }catch{
-        data=JSON.parse(JSON.stringify(DEFAULT_DATA));
-      }
-    }else{
-      data=JSON.parse(JSON.stringify(DEFAULT_DATA));
-    }
+    // Die Datei auf GitHub ist die maßgebliche Datenquelle.
+    // Dadurch werden neue Personen aus der JSON immer sofort angezeigt.
+    data=JSON.parse(JSON.stringify(DEFAULT_DATA));
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
 
     message.style.display="none";
     render();
@@ -163,7 +151,7 @@ function render(){
     card.innerHTML=`
       <button class="pencil" type="button" title="Bearbeiten" aria-label="${esc(p.name)} bearbeiten">✎</button>
       <div class="photos">
-        <div class="photo"><img src="${esc(p.oldImg)}" alt="${esc(p.name)} 1994"><span>1994</span></div>
+        <div class="photo">${p.oldImg?`<img src="${esc(p.oldImg)}" alt="${esc(p.name)} 1994">`:`<div class="empty">1994<br><small>kein Bild</small></div>`}<span>1994</span></div>
         <div class="arrow">↔</div>
         <div class="photo">${p.currentImg?`<img src="${esc(p.currentImg)}" alt="Aktuelles Foto">`:`<div class="empty">Heute<br><small>kein Bild</small></div>`}<span>Heute</span></div>
       </div>

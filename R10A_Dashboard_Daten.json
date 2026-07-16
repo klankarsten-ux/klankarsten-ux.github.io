@@ -306,6 +306,38 @@
     "network": "",
     "oldImg": "",
     "currentImg": ""
+  },
+  {
+    "nr": 29,
+    "name": "Pierra",
+    "status": "Hinweis",
+    "role": "Nicht auf dem Klassenfoto",
+    "today": "Ehemalige Mitschülerin.",
+    "location": "",
+    "network": "War Teil einer festen Vierergruppe mit Daniela, Maria und Pina.",
+    "oldImg": "",
+    "currentImg": ""
+  },
+  {
+    "nr": 30,
+    "name": "Cetin Ispir",
+    "status": "Bestätigt",
+    "role": "Bis zur 9. Klasse · Facebook",
+    "today": "Über Facebook-Profil gefunden.",
+    "location": "",
+    "network": "War bis zur 9. Klasse in der R10A.",
+    "oldImg": "",
+    "currentImg": ""
+  },
+  {
+    "nr": 31,
+    "name": "Coskun Ertug",
+    "status": "Hinweis",
+    "role": "Über Facebook-Profil gefunden.",
+    "today": "Über Facebook-Profil gefunden.",
+    "location": "",
+    "network": "",
+    "oldImg": "",
+    "currentImg": ""
   }
-{ "nr": 29, "name": "Pierra", "status": "Hinweis", "role": "Nicht auf dem Klassenfoto", "today": "Ehemalige Mitschülerin.", "location": "", "network": "War Teil einer festen Vierergruppe mit Daniela, Maria und Pina.", "oldImg": "", "currentImg": "" }, { "nr": 30, "name": "Cetin Ispir", "status": "Bestätigt", "role": "Bis zur 9. Klasse · Facebook", "today": "Über Facebook-Profil gefunden.", "location": "", "network": "War bis zur 9. Klasse in der R10A.", "oldImg": "", "currentImg": "" }, { "nr": 31, "name": "Coskun Ertug", "status": "Hinweis", "role": "Über Facebook-Profil gefunden.", "today": "Über Facebook-Profil gefunden.", "location": "", "network": "", "oldImg": "", "currentImg": "" }
 ]
