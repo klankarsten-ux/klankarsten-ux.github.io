@@ -2,7 +2,7 @@
   {
     "nr": 1,
     "name": "Carsten Nulle",
-    "status": "Bestätigt",
+    "status": "Hinweis",
     "role": "Fußball",
     "today": "Ehemaliger Profifußballer · heute Torwarttrainer",
     "location": "Berlin / Fußballumfeld",
@@ -13,7 +13,7 @@
   {
     "nr": 2,
     "name": "Marina",
-    "status": "Bestätigt",
+    "status": "Hinweis",
     "role": "",
     "today": "Vorname laut Ferhat bestätigt.",
     "location": "",
@@ -57,7 +57,7 @@
   {
     "nr": 6,
     "name": "Peter Sauer",
-    "status": "Wahrscheinlich",
+    "status": "Hinweis",
     "role": "Musik",
     "today": "Multi-Instrumentalist · Schlagzeug und Saxophon · Interton Trio",
     "location": "Dreieich",
@@ -101,7 +101,7 @@
   {
     "nr": 10,
     "name": "Daniela",
-    "status": "Bestätigt",
+    "status": "Hinweis",
     "role": "",
     "today": "Vorname laut Ferhat bestätigt.",
     "location": "",
@@ -112,7 +112,7 @@
   {
     "nr": 11,
     "name": "Maria",
-    "status": "Bestätigt",
+    "status": "Hinweis",
     "role": "",
     "today": "Vorname laut Ferhat bestätigt.",
     "location": "",
@@ -145,7 +145,7 @@
   {
     "nr": 14,
     "name": "Sandra",
-    "status": "Hinweis",
+    "status": "Bestätigt",
     "role": "Schulweg",
     "today": "Ging danach vermutlich auf die Max-Eyth-Schule in Sprendlingen",
     "location": "Dreieich / Sprendlingen",
@@ -156,7 +156,7 @@
   {
     "nr": 15,
     "name": "Astrit Koch",
-    "status": "Offen",
+    "status": "Bestätigt",
     "role": "",
     "today": "Schreibweise noch zu prüfen",
     "location": "",
@@ -189,7 +189,7 @@
   {
     "nr": 18,
     "name": "Kai Schuster",
-    "status": "Hinweis",
+    "status": "Bestätigt",
     "role": "Fußball",
     "today": "Hat laut Erinnerung eine Fußballkarriere gemacht",
     "location": "Rhein-Main",
@@ -244,7 +244,7 @@
   {
     "nr": 23,
     "name": "Marlis",
-    "status": "Bestätigt",
+    "status": "Hinweis",
     "role": "",
     "today": "Vorname laut Ferhat bestätigt.",
     "location": "",
@@ -321,7 +321,7 @@
   {
     "nr": 30,
     "name": "Cetin Ispir",
-    "status": "Bestätigt",
+    "status": "Hinweis",
     "role": "Bis zur 9. Klasse · Facebook",
     "today": "Über Facebook-Profil gefunden.",
     "location": "",
