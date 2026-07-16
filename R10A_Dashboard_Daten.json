@@ -34,7 +34,7 @@
   },
   {
     "nr": 4,
-    "name": "Melanie (Statsak)",
+    "name": "Melanie Starzak",
     "status": "Hinweis",
     "role": "Schulweg",
     "today": "Ging danach auf die Max-Eyth-Schule in Sprendlingen. Ggf. noch Kontakt mit Sandra?",
@@ -111,14 +111,14 @@
   },
   {
     "nr": 11,
-    "name": "Maria",
+    "name": "Maria Federico",
     "status": "Hinweis",
     "role": "",
-    "today": "Vorname laut Ferhat bestätigt.",
-    "location": "",
+    "today": "",
+    "location": "Langen",
     "network": "vermutlich https://www.facebook.com/maria.federico.900",
     "oldImg": "assets/images/image_015.jpg",
-    "currentImg": ""
+    "currentImg": "assets/images/image_041.jpg"
   },
   {
     "nr": 12,
@@ -221,7 +221,7 @@
   },
   {
     "nr": 21,
-    "name": "René Frey",
+    "name": "Rene Frey",
     "status": "Bestätigt",
     "role": "",
     "today": "",
@@ -276,21 +276,21 @@
   },
   {
     "nr": 26,
-    "name": "Sennayid / Senayid (?)",
+    "name": "Senayit Torres",
     "status": "Hinweis",
     "role": "Nicht auf dem Klassenfoto",
     "today": "Ist laut Ferhat später in die USA gegangen.",
     "location": "USA",
-    "network": "Schreibweise des Namens noch prüfen.",
+    "network": "https://www.facebook.com/torresindustry",
     "oldImg": "",
-    "currentImg": ""
+    "currentImg": "assets/images/image_040.jpg"
   },
   {
     "nr": 27,
-    "name": "Unbekannte iranische Mitschülerin",
+    "name": "Mandana",
     "status": "Offen",
     "role": "Nicht auf dem Klassenfoto",
-    "today": "Freundin von Marok; Name noch unbekannt.",
+    "today": "Freundin von Marok",
     "location": "",
     "network": "",
     "oldImg": "",
