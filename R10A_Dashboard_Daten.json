@@ -114,7 +114,7 @@
     "name": "Mariacristina Federico",
     "status": "in WhatsApp Gruppe",
     "role": "",
-    "today": "",
+    "today": "SETON ∙ Brady GmbH Deutschland",
     "location": "Langen",
     "network": "https://www.facebook.com/mariacristina.federico1",
     "oldImg": "assets/images/image_015.jpg",
@@ -133,14 +133,14 @@
   },
   {
     "nr": 13,
-    "name": "Patrizia Bombala",
-    "status": "in WhatsApp Gruppe",
+    "name": "Patrizia",
+    "status": "Hinweis",
     "role": "",
     "today": "",
     "location": "",
     "network": "",
     "oldImg": "assets/images/image_017.jpg",
-    "currentImg": "assets/images/image_044.jpg"
+    "currentImg": ""
   },
   {
     "nr": 14,
@@ -298,14 +298,14 @@
   },
   {
     "nr": 28,
-    "name": "Unbekannte marokkanische Mitschülerin",
-    "status": "Offen",
+    "name": "Patrizia Bombala",
+    "status": "in WhatsApp Gruppe",
     "role": "Nicht auf dem Klassenfoto",
-    "today": "Kam vermutlich aus Neu-Isenburg.",
-    "location": "Neu-Isenburg",
+    "today": "",
+    "location": "",
     "network": "",
     "oldImg": "",
-    "currentImg": ""
+    "currentImg": "assets/images/image_044.jpg"
   },
   {
     "nr": 29,
