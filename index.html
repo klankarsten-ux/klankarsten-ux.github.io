@@ -52,7 +52,7 @@ footer{padding-bottom:35px}
 </div>
 <div class="controls">
 <input id="search" type="search" placeholder="Name, Ort, Beruf oder Hinweis suchen">
-<select id="filter"><option value="">Alle Status</option><option>Bestätigt</option><option>Wahrscheinlich</option><option>Hinweis</option><option>Organisator</option><option>Offen</option></select>
+<select id="filter"><option value="">Alle Status</option><option>Bestätigt</option><option>in WhatsApp Gruppe</option><option>Hinweis</option><option>Organisator</option><option>Offen</option></select>
 </div>
 </header>
 <main><div id="loadMessage" class="notice" style="margin-bottom:18px">Daten werden geladen …</div><div id="grid" class="grid"></div></main>
@@ -65,7 +65,7 @@ footer{padding-bottom:35px}
 <div class="notice">Du kannst Textfelder ändern und einen Bildpfad eintragen. Es werden keine Base64-Bilder mehr gespeichert.</div>
 <input id="nr" type="hidden">
 <label>Name<input id="name" required></label>
-<label>Status<select id="status"><option>Bestätigt</option><option>Wahrscheinlich</option><option>Hinweis</option><option>Organisator</option><option>Offen</option></select></label>
+<label>Status<select id="status"><option>Bestätigt</option><option>in WhatsApp Gruppe</option><option>Hinweis</option><option>Organisator</option><option>Offen</option></select></label>
 <label>Bereich / Rolle<input id="role"></label>
 <label>Aktuelle Informationen<textarea id="today"></textarea></label>
 <label>Ort / Region<input id="location"></label>
@@ -136,7 +136,7 @@ function esc(v){
   return String(v ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c]);
 }
 function statusClass(s){
-  return s==="Bestätigt"?"#62df99":s==="Organisator"?"#ffd27c":s==="Wahrscheinlich"?"#ffe08d":s==="Hinweis"?"#75caff":"#c7d0db";
+  return s==="Bestätigt"?"#62df99":s==="Organisator"?"#ffd27c":s==="In WhatsApp Gruppe"?"#ffe08d":s==="Hinweis"?"#75caff":"#c7d0db";
 }
 function render(){
   const term=document.getElementById("search").value.trim().toLowerCase();
