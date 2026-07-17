@@ -279,8 +279,8 @@
     "name": "Senayit Torres",
     "status": "Bestätigt",
     "role": "Nicht auf dem Klassenfoto",
-    "today": "Lebt in den USA",
-    "location": "USA - Texas Austin",
+    "today": "Lebt in den USA Texas Austin.",
+    "location": "USA",
     "network": "https://www.facebook.com/torresindustry",
     "oldImg": "",
     "currentImg": "assets/images/image_040.jpg"
@@ -298,14 +298,14 @@
   },
   {
     "nr": 28,
-    "name": "Patrizia Bombala",
+    "name": "Patricia Bombala",
     "status": "in WhatsApp Gruppe",
     "role": "Nicht auf dem Klassenfoto",
     "today": "",
     "location": "",
     "network": "",
-    "oldImg": "",
-    "currentImg": "assets/images/image_046.jpg"
+    "oldImg": "assets/images/image_046.jpg",
+    "currentImg": "assets/images/image_044.jpg"
   },
   {
     "nr": 29,
