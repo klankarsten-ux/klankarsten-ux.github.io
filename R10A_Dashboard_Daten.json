@@ -279,8 +279,8 @@
     "name": "Senayit Torres",
     "status": "Bestätigt",
     "role": "Nicht auf dem Klassenfoto",
-    "today": "Lebt in den USA Texas Austin.",
-    "location": "USA",
+    "today": "Lebt in den USA",
+    "location": "USA - Texas Austin",
     "network": "https://www.facebook.com/torresindustry",
     "oldImg": "",
     "currentImg": "assets/images/image_040.jpg"
@@ -304,8 +304,8 @@
     "today": "",
     "location": "",
     "network": "",
-    "oldImg": "assets/images/image_046.jpg",
-    "currentImg": "assets/images/image_044.jpg"
+    "oldImg": "",
+    "currentImg": "assets/images/image_046.jpg"
   },
   {
     "nr": 29,
