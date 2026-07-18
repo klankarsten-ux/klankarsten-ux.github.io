@@ -136,7 +136,7 @@ function esc(v){
   return String(v ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c]);
 }
 function statusClass(s){
-  return s==="Bestätigt"?"#62df99":s==="Organisator"?"#ffd27c":s==="In WhatsApp Gruppe"?"#62df99":s==="Hinweis"?"#75caff":"#c7d0db";
+  return s==="Bestätigt"?"#62df99":s==="Organisator"?"#62df99":s==="In WhatsApp Gruppe"?"#62df99":s==="Hinweis"?"#75caff":"#c7d0db";
 }
 function render(){
   const term=document.getElementById("search").value.trim().toLowerCase();
