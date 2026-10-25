@@ -19,7 +19,7 @@
     "location": "",
     "network": "evtl. Marina Jovanovic - https://www.facebook.com/marina.jovanovic.1614",
     "oldImg": "assets/images/image_003.jpg",
-    "currentImg": "assets/images/image_051.jpg"
+    "currentImg": ""
   },
   {
     "nr": 3,
@@ -167,7 +167,7 @@
   {
     "nr": 16,
     "name": "Michael Herdt",
-    "status": "Bestätigt",
+    "status": "in WhatsApp Gruppe",
     "role": "",
     "today": "",
     "location": "Rhein-Main",
@@ -206,7 +206,7 @@
     "location": "",
     "network": "",
     "oldImg": "assets/images/image_025.jpg",
-    "currentImg": "assets/images/image_052.jpg"
+    "currentImg": ""
   },
   {
     "nr": 20,
@@ -222,7 +222,7 @@
   {
     "nr": 21,
     "name": "Rene Frey (Krznik)",
-    "status": "Bestätigt",
+    "status": "in WhatsApp Gruppe",
     "role": "",
     "today": "",
     "location": "",
@@ -244,7 +244,7 @@
   {
     "nr": 23,
     "name": "Marlitt Spernau",
-    "status": "Hinweis",
+    "status": "in WhatsApp Gruppe",
     "role": "",
     "today": "",
     "location": "",
@@ -294,7 +294,7 @@
     "location": "",
     "network": "",
     "oldImg": "",
-    "currentImg": "assets/images/image_054.jpg"
+    "currentImg": ""
   },
   {
     "nr": 28,
@@ -315,7 +315,7 @@
     "today": "Nicht auf dem Klassenfoto",
     "location": "",
     "network": "",
-    "oldImg": "assets/images/image_057.jpg",
+    "oldImg": "",
     "currentImg": "assets/images/image_033.jpg"
   },
   {
@@ -326,7 +326,7 @@
     "today": "",
     "location": "",
     "network": "War bis zur 9. Klasse in der R10A.",
-    "oldImg": "assets/images/image_058.jpg",
+    "oldImg": "",
     "currentImg": "assets/images/image_037.jpg"
   },
   {
@@ -337,18 +337,7 @@
     "today": "",
     "location": "Dortmund",
     "network": "War bis zur 9. Klasse in der R10A.",
-    "oldImg": "assets/images/image_059.jpg",
+    "oldImg": "",
     "currentImg": "assets/images/image_038.jpg"
-  }
-  {
-    "nr": 32,
-    "name": "René Laane",
-    "status": "in WhatsApp Gruppe",
-    "role": "Klassenlehrer",
-    "today": "",
-    "location": "Dreieich",
-    "network": "",
-    "oldImg": "assets/images/image_056.jpg",
-    "currentImg": "assets/images/image_055.jpg"
   }
 ]
