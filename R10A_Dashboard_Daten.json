@@ -293,8 +293,8 @@
     "today": "",
     "location": "",
     "network": "",
-    "oldImg": "",
-    "currentImg": ""
+    "oldImg": "assets/images/image_060.jpg",
+    "currentImg": "assets/images/image_054.jpg""
   },
   {
     "nr": 28,
@@ -315,7 +315,7 @@
     "today": "Nicht auf dem Klassenfoto",
     "location": "",
     "network": "",
-    "oldImg": "",
+    "oldImg": "assets/images/image_057.jpg",
     "currentImg": "assets/images/image_033.jpg"
   },
   {
@@ -326,7 +326,7 @@
     "today": "",
     "location": "",
     "network": "War bis zur 9. Klasse in der R10A.",
-    "oldImg": "",
+    "oldImg": "assets/images/image_058.jpg",
     "currentImg": "assets/images/image_037.jpg"
   },
   {
@@ -337,7 +337,18 @@
     "today": "",
     "location": "Dortmund",
     "network": "War bis zur 9. Klasse in der R10A.",
-    "oldImg": "",
+    "oldImg": "assets/images/image_059.jpg",
     "currentImg": "assets/images/image_038.jpg"
-  }
+  },
+  {
+    "nr": 32,
+    "name": "René Laane",
+    "status": "in WhatsApp Gruppe",
+    "role": "Klassenlehrer",
+    "today": "",
+    "location": "Dreieich",
+    "network": "",
+    "oldImg": "assets/images/image_056.jpg",
+    "currentImg": "assets/images/image_055.jpg"
+  },
 ]
